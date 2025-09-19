@@ -10,6 +10,10 @@ const bookingMachine = createMachine(
     },
     states: {
       initial: {
+        entry: assign(() => ({
+          passengers: [],
+          selectedCountry: "",
+        })),
         on: {
           START: {
             target: "search",
