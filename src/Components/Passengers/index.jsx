@@ -33,6 +33,13 @@ function Passengers({ state, send }) {
         value={value}
         onChange={onChangeInput}
       />
+
+      <ul>
+        {state.context.passengers.map((passenger) => (
+          <li>{passenger}</li>
+        ))}
+      </ul>
+
       <div className="Passengers-buttons">
         <button className="Passengers-add button-secondary" type="submit">
           Agregar Pasajero
