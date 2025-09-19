@@ -8,8 +8,9 @@ function Passengers({ state, send }) {
     changeValue(e.target.value);
   };
 
-  const submit = (e) => {
-    e.preventDefault();
+  const submit = (event) => {
+    event.preventDefault();
+    send({ type: "ADD", newPassenger: value });
     changeValue("");
   };
 

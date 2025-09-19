@@ -9,6 +9,7 @@ function BaseLayout() {
   const [state, send] = useMachine(bookingMachine);
 
   console.log("Machine", state.value);
+  console.log("Context", state.context);
 
   return (
     <div className="BaseLayout">

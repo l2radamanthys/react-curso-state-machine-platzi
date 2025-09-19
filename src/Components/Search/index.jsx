@@ -10,7 +10,8 @@ function Search({ send }) {
 
   const options = ["Mexico", "Venezuela", "Colombia"];
   const goToPassengers = () => {
-    send({ type: "CONTINUE" });
+    console.log(flight);
+    send({ type: "CONTINUE", selectedCountry: flight });
   };
 
   return (
