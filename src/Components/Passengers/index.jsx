@@ -35,8 +35,8 @@ function Passengers({ state, send }) {
       />
 
       <ul>
-        {state.context.passengers.map((passenger) => (
-          <li>{passenger}</li>
+        {state.context.passengers.map((passenger, idx) => (
+          <li key={`person-${idx}`}>{passenger}</li>
         ))}
       </ul>
 
