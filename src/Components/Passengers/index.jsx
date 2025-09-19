@@ -1,7 +1,8 @@
 import React from "react";
+import "./Passengers.css";
 
-function Passenger({ state, send }) {
-  const [value, changeValue] = useState("");
+function Passengers({ state, send }) {
+  const [value, changeValue] = React.useState("");
 
   const onChangeInput = (e) => {
     changeValue(e.target.value);
@@ -10,6 +11,10 @@ function Passenger({ state, send }) {
   const submit = (e) => {
     e.preventDefault();
     changeValue("");
+  };
+
+  const goToTickets = () => {
+    send({ type: "DONE" });
   };
 
   return (
@@ -30,7 +35,11 @@ function Passenger({ state, send }) {
         <button className="Passengers-add button-secondary" type="submit">
           Agregar Pasajero
         </button>
-        <button className="Passenger-pay button" type="button">
+        <button
+          onClick={goToTickets}
+          className="Passenger-pay button"
+          type="button"
+        >
           Ver mi ticket
         </button>
       </div>
@@ -38,4 +47,4 @@ function Passenger({ state, send }) {
   );
 }
 
-export { Passenger };
+export { Passengers };

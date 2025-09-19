@@ -1,9 +1,9 @@
 import React from "react";
 import "./Tickets.css";
 
-function Tickets() {
+function Tickets({ send }) {
   const finish = () => {
-    console.log("finish");
+    send({ type: "FINISH" });
   };
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Search.css";
 
-function Search({ send, context }) {
+function Search({ send }) {
   const [flight, setFlight] = React.useState("");
 
   const handleSelectChange = (event) => {
@@ -9,6 +9,9 @@ function Search({ send, context }) {
   };
 
   const options = ["Mexico", "Venezuela", "Colombia"];
+  const goToPassengers = () => {
+    send({ type: "CONTINUE" });
+  };
 
   return (
     <div className="Search">
@@ -28,7 +31,11 @@ function Search({ send, context }) {
           </option>
         ))}
       </select>
-      <button disabled={flight === ""} className="Search-continue button">
+      <button
+        onClick={goToPassengers}
+        disabled={flight === ""}
+        className="Search-continue button"
+      >
         Continuar
       </button>
     </div>

@@ -8,15 +8,12 @@ import { StepsLayout } from "../StepsLayout";
 function BaseLayout() {
   const [state, send] = useMachine(bookingMachine);
 
-  console.log("Machine", state);
-  console.log("matches true", state.matches("initial"));
-  console.log("matches false", state.matches("tickets"));
-  console.log("can", state.can("finish"));
+  console.log("Machine", state.value);
 
   return (
     <div className="BaseLayout">
-      <Nav />
-      <StepsLayout />
+      <Nav send={send} state={state} />
+      <StepsLayout send={send} state={state} />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
-function Welcome() {
+function Welcome({ send }) {
   const startBooking = () => {
-    console.log("start booking");
+    send({ type: "START" });
   };
 
   return (
