@@ -26,6 +26,7 @@ function Passengers({ state, send }) {
         id="name"
         name="name"
         type="text"
+        className="bg-white p-2 my-2 w-full"
         placeholder="Escribe el nombre completo"
         required
         value={value}

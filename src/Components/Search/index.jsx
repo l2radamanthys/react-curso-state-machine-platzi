@@ -18,7 +18,7 @@ function Search({ send }) {
       <p className="Search-title title">Busca tu destino</p>
       <select
         id="country"
-        className="Search-select"
+        className="Search-select bg-white"
         value={flight}
         onChange={handleSelectChange}
       >
