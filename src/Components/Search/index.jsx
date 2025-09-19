@@ -1,16 +1,16 @@
 import React from "react";
 import "./Search.css";
 
-function Search({ send }) {
+function Search({ state, send }) {
   const [flight, setFlight] = React.useState("");
 
   const handleSelectChange = (event) => {
     setFlight(event.target.value);
   };
 
-  const options = ["Mexico", "Venezuela", "Colombia"];
+  const options = state.context.countries || [];
+  console.log("countries", options);
   const goToPassengers = () => {
-    console.log(flight);
     send({ type: "CONTINUE", selectedCountry: flight });
   };
 
@@ -26,9 +26,9 @@ function Search({ send }) {
         <option value="" disabled defaultValue>
           Escoge un país
         </option>
-        {options.map((option) => (
-          <option value={option} key={option}>
-            {option}
+        {options.map((option, idx) => (
+          <option key={`country-${idx}`} value={option.name.common}>
+            {option.name.common}
           </option>
         ))}
       </select>

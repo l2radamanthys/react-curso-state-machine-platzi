@@ -12,9 +12,11 @@ function Welcome({ send }) {
         Compra tu vuelo y conoce un nuevo rincón del mundo, te va a sorprender
         las maravillas que hay para explorar
       </p>
-      <button onClick={startBooking} className="Welcome-cancel button">
-        Comenzar
-      </button>
+      <div className="mt-2 text-right">
+        <button onClick={startBooking} className="Welcome-cancel button">
+          Comenzar
+        </button>
+      </div>
     </div>
   );
 }
