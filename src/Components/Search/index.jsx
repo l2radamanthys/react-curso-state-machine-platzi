@@ -26,8 +26,11 @@ function Search({ state, send }) {
         <option value="" disabled defaultValue>
           Escoge un país
         </option>
-        {options.map((option, idx) => (
-          <option key={`country-${idx}`} value={option.name.common}>
+        {options.map((option) => (
+          <option
+            key={`country-${option.name.common}`}
+            value={option.name.common}
+          >
             {option.name.common}
           </option>
         ))}

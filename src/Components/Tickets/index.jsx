@@ -15,8 +15,8 @@ function Tickets({ send, context }) {
         <div className="Tickets-country">{context.selectedCountry}</div>
         <div className="Tickets-passengers">
           <span>✈</span>
-          {context.passengers.map((passenger, idx) => {
-            return <p key={`passenger-${idx}`}>{passenger}</p>;
+          {context.passengers.map((passenger) => {
+            return <p key={`passenger-${passenger}`}>{passenger}</p>;
           })}
         </div>
       </div>
