@@ -139,7 +139,13 @@ const bookingMachine = createMachine(
               ],
             }),
           },
-          DONE: "tickets",
+          DONE: {
+            target: "tickets",
+            guard: ({ context }) => {
+              console.log(context.passengers);
+              return context.passengers?.length > 0;
+            },
+          },
           CANCEL: "initial",
         },
       },
